@@ -1,0 +1,65 @@
+@use "../root/index.scss";
+.dashboard {
+  width: 100%;
+  // overflow: auto;
+
+  &__total {
+    display: grid;
+    grid-template-columns: repeat(4, 200px);
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 26px;
+
+    @media screen and (max-width: index.$medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: index.$small) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      background-color: index.$white;
+      padding: 20px 10px;
+      gap: 6px;
+    }
+
+    &-label {
+      font-size: 15px !important;
+    }
+
+    &-data {
+      font-weight: 600;
+      color: index.$success;
+    }
+  }
+
+  &__column {
+    display: grid;
+    grid-template-columns: repeat(2, 49.5%);
+    grid-gap: 16px;
+
+    @media screen and (max-width: index.$medium) {
+      grid-template-columns: repeat(1, 100%);
+    }
+
+    &-wrapper {
+      padding: 20px;
+      background-color: index.$white;
+      // max-height: 300px;
+      // height: clamp(200px, 100%, 300px);
+      // overflow-y: auto;
+    }
+
+    &-label {
+      font-size: 15px !important;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 16px !important;
+    }
+  }
+}
